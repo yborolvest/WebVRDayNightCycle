@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<title>DayNight Cycle</title>
+<script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+<script src="https://unpkg.com/aframe-text-geometry-component/dist/aframe-text-geometry-component.min.js"></script>
+<script src="myfont.typeface.js"></script>
+</head>
+<body>
+<a-scene>
+  <a-entity position="0 0 2">
+    <a-camera user-height="1.6"></a-camera>
+  </a-entity>
+  <a-entity>
+    <a-box color="red" position="0 1.6 0" rotation="45 45 45 " shadow="receive: true"><a-animation attribute="position" from="0 1.6 0" to="0 1 0 " dur="8000" repeat="indefinete" direction="alternate"></a-animation></a-box>
+  </a-entity>
+  <a-plane color="#A3CB38" rotation ="-90 0 0" scale="30 30 30" position="0 0 0" shadow="receive: true"></a-plane>
+	<a-cylinder position="5 0 -10" scale="1 20 1" color="#F79F1F" shadow="receive: true"></a-cylinder>
+  <a-sky color="#12CBC4">
+    <a-animation attribute="color" from="#12CBC4" to="#1B1464" dur="30000" repeat="indefinite" direction="alternate" ></a-animation>
+  </a-sky>
+  <a-entity>
+    <a-entity geometry="primitive: box;" light="color: yellow; intensity: 1; type: point; castShadow: true;" position="0 40 0"></a-entity>
+    <a-entity geometry="primitive: box;" light="color: white; intensity: .2; type: point; castShadow: true;" position="0 -40 0"></a-entity>
+    <a-animation attribute="rotation" from="0 0 0" to="360 0 0" repeat="indefinite" dur="60000" easing="linear"></a-animation>
+  </a-entity>
+</a-scene>
+</body>
+</html>
